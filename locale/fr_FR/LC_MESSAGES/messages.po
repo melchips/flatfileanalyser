@@ -1,0 +1,243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Flat File Analyser 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-10 00:26+0100\n"
+"PO-Revision-Date: 2012-11-03 01:30+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <truphemus dot francois at gmail dot com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: fichier_plat.php:267
+msgid "Can't get data when record has not been parsed"
+msgstr "Impossible de retourner les données car l'enregistrement n'a pas encore été analysé"
+
+#: fichier_plat.php:279
+msgid "Can't tell if input is null when record has not been parsed"
+msgstr "Impossible de déterminer si l'entrée est nulle car l'enregistrement n'a pas été analysé"
+
+#: fichier_plat.php:292 fichier_plat.php:304
+msgid "Can't check for errors when record has not been parsed"
+msgstr "Impossible de vérifier les erreurs car l'enregistrement n'a pas été analysé"
+
+#: fichier_plat.php:365 fichier_plat.php:367 fichier_plat.php:654
+msgid "Field"
+msgstr "Champ"
+
+#: fichier_plat.php:365 fichier_plat.php:367
+msgid "Position"
+msgstr "Position"
+
+#: fichier_plat.php:365 fichier_plat.php:367
+msgid "Size"
+msgstr "Taille"
+
+#: fichier_plat.php:365 fichier_plat.php:367
+msgid "Type (A/N)"
+msgstr "Type (A/N)"
+
+#: fichier_plat.php:365 fichier_plat.php:367
+msgid "mandatory (Y/N)"
+msgstr "obligatoire (O/N)"
+
+#: fichier_plat.php:365 fichier_plat.php:367
+msgid "Info"
+msgstr "Info"
+
+#: fichier_plat.php:381
+msgid "Numerical field with letters"
+msgstr "Champ numérique contenant des lettres"
+
+#: fichier_plat.php:382
+msgid "Empty mandatory field"
+msgstr "Champ obligatoire vide"
+
+#: fichier_plat.php:383
+msgid "Empty field"
+msgstr "Champ vide"
+
+#: fichier_plat.php:446
+msgid "No mapping file specified"
+msgstr "Fichier mapping non précisé"
+
+#: fichier_plat.php:448
+#, php-format
+msgid "Can't open mapping file specified ('%s')"
+msgstr "Impossible d'ouvrir le fichier mapping spécifié ('%s')"
+
+#: fichier_plat.php:472 fichier_plat.php:517
+msgid "unknown"
+msgstr "inconnu"
+
+#: fichier_plat.php:472
+msgid "unspecified in format"
+msgstr "non déterminé dans le format"
+
+#: fichier_plat.php:517
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: fichier_plat.php:532
+msgid "Hidden data"
+msgstr "Données masquées"
+
+#: fichier_plat.php:532
+msgid "option"
+msgstr "option"
+
+#: fichier_plat.php:532
+msgid "display only totals"
+msgstr "afficher uniquement les totaux"
+
+#: fichier_plat.php:614
+#, php-format
+msgid "Can't list files in specified directory ('%s')"
+msgstr "Impossible d'obtenir la liste des fichiers du répertoire ('%s')"
+
+#: fichier_plat.php:648
+msgid "Record"
+msgstr "Enregistrement"
+
+#: fichier_plat.php:654
+msgid "Totals"
+msgstr "Totaux"
+
+#: fichier_plat.php:654
+msgid "Total"
+msgstr "Total"
+
+#: fichier_plat.php:721
+msgid "illegal call"
+msgstr "appel illégal"
+
+#: fichier_plat.php:730
+msgid "illegal dynamic function call"
+msgstr "appel dynamique illégal de fonction"
+
+#: fichier_plat.php:812
+msgid "Language"
+msgstr "Langue"
+
+#: fichier_plat.php:819
+msgid "Analysis results"
+msgstr "Résultat de l'analyse"
+
+#: fichier_plat.php:819
+msgid "jump to  source data form"
+msgstr "saut rapide vers le formulaire des données source"
+
+#: fichier_plat.php:822
+msgid "Fields color code"
+msgstr "Légende des couleurs de champs"
+
+#: fichier_plat.php:826
+msgid "optional"
+msgstr "optionnel"
+
+#: fichier_plat.php:829
+msgid "mandatory"
+msgstr "obligatoire"
+
+#: fichier_plat.php:832
+msgid "optional error"
+msgstr "facultatif en erreur"
+
+#: fichier_plat.php:835
+msgid "mandatory error"
+msgstr "obligatoire en erreur"
+
+#: fichier_plat.php:929
+msgid "Error raised"
+msgstr "L'erreur suivante s'est produite"
+
+#: fichier_plat.php:933
+msgid "Error in script. Please check its format"
+msgstr "Une erreur s'est produite dans votre script. Merci d'en vérifier le format"
+
+#: fichier_plat.php:935
+msgid "Nothing was returned by the script"
+msgstr "Le script n'a rien retourné"
+
+#: fichier_plat.php:952
+msgid "Source data"
+msgstr "Données source"
+
+#: fichier_plat.php:955
+msgid "Data format"
+msgstr "Format des données"
+
+#: fichier_plat.php:973
+msgid "<b>compact</b> mode"
+msgstr "mode <b>compact</b>"
+
+#: fichier_plat.php:974
+msgid "display <b>totals</b>"
+msgstr "afficher les <b>totaux</b>"
+
+#: fichier_plat.php:975
+msgid "display <b>totals only</b>"
+msgstr "afficher <b>uniquement les totaux</b>"
+
+#: fichier_plat.php:976
+msgid "hide each record <b>title</b>"
+msgstr "masquer le <b>titre</b> de chaque enregistrement"
+
+#: fichier_plat.php:977
+msgid "hide lines with <b>undefined</b> format"
+msgstr "masquer les lignes <b>inconnues</b>"
+
+#: fichier_plat.php:978
+msgid "display data <b>gaps</b>"
+msgstr "afficher les zones <b>non définies</b> dans le format"
+
+#: fichier_plat.php:979
+msgid "Data charset"
+msgstr "Encodage des données"
+
+#: fichier_plat.php:980
+msgid "none"
+msgstr "aucun"
+
+#: fichier_plat.php:981 fichier_plat.php:982
+msgid "in"
+msgstr "en"
+
+#: fichier_plat.php:985 fichier_plat.php:1007
+msgid "Analyse"
+msgstr "Analyser"
+
+#: fichier_plat.php:987
+msgid "advanced <b>scripting</b>"
+msgstr "<b>scripting</b> avancé"
+
+#: fichier_plat.php:989
+msgid "PHP script"
+msgstr "Script PHP"
+
+#: fichier_plat.php:989
+msgid "load sample script"
+msgstr "charger un exemple"
+
+#: fichier_plat.php:989
+msgid "clear script"
+msgstr "effacer le script"
+
+#: fichier_plat.php:997
+msgid "Script output"
+msgstr "Sortie du script"
+
+#: fichier_plat.php:1005
+msgid "<b>analyse</b> script output (instead of source data)"
+msgstr "<b>analyser</b> la sortie du script (à la place des données source)"
+
+#: fichier_plat.php:1016
+msgid "Get script output as file"
+msgstr "Récupérer la sortie du script sous forme de fichier"

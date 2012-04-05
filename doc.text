@@ -1,0 +1,380 @@
+# Documentation #
+
+## Description ##
+
+This PHP script can be used to check **visually** the **consistency** of data in a **flat file**.
+
+It let you visually check **fields content**, fields with **wrong format** (numerical or text), **misplaced** data and let you **alter data** content with **scripting**.
+
+
+## Usage ##
+
+1. **select** the **format** of data to be analysed with the *'Data format'* drop-down list <br />
+![Screenshot of data format selection][select_data_format]
+2. **paste** data to be analysed in *'Source data'* form <br />
+![Screenshot of pasting data][paste_data]
+3. **select** analysis **options** <br />
+![Screenshot of selecting options][select_options]
+4. **choose** data **charset** conversion if needed<br />
+![Screenshot of selecting charset][select_charset]
+5. **write** a custom **script** to alter data before the analysis if needed  <br />
+![Screenshot of custom scripting][custom_scripting]
+6. **launch** analysis with the *'Analyse'* button<br /><br />
+![Screenshot of launching analysis][launch_analysis]
+7. **analyse** the results <br />
+![Screenshot of analysis results][analysis_results]
+
+[select_data_format]: ./img/select_data_format.jpg
+[paste_data]: ./img/paste_data.jpg
+[select_options]: ./img/select_options.jpg
+[select_charset]: ./img/select_charset.jpg
+[custom_scripting]: ./img/custom_scripting.jpg
+[launch_analysis]: ./img/launch_analysis.jpg
+[analysis_results]: ./img/analysis_result.jpg
+
+## Analysis options ##
+
+### compact mode ###
+
+With fixed width data, the columns are shortened to the width of each field.
+
+Columns titles may be cut if too long, but resulting tables will be more compact.
+
+Without the option :
+
+![Screenshot of compact mode disabled][option_compact_mode_disabled]
+
+With the option :
+
+![Screenshot of compact mode enabled][option_compact_mode_enabled]
+
+[option_compact_mode_enabled]: ./img/option_compact_mode_enabled.jpg
+[option_compact_mode_disabled]: ./img/option_compact_mode_disabled.jpg
+
+### display totals ###
+
+Add a table at the end of the analysis with the total amount of special fields.
+
+![Screenshot of display totals enabled][option_display_totals_enabled]
+
+[option_display_totals_enabled]: ./img/option_display_totals.jpg
+
+### display totals only ###
+
+Display only the totals table.
+
+![Screenshot of display totals only][option_display_totals_only]
+
+[option_display_totals_only]: ./img/option_display_totals_only.jpg
+
+### hide each record title ###
+
+Hide the 'Record N' title before each record.
+
+Without the option :
+
+![Screenshot of hide each record title disabled][option_hide_record_title_disabled]
+
+
+With the option :
+
+![Screenshot of hide each record title enabled][option_hide_record_title_enabled]
+
+
+You can get an even more compact display of data with both options *"Hide each record title"* and *"Compact mode"* enabled :
+
+![Screenshot of hide each record title enabled with compact mode][option_hide_record_title_enabled_with_compact_mode]
+
+
+[option_hide_record_title_disabled]: ./img/option_hide_record_title_disabled.jpg
+
+[option_hide_record_title_enabled]: ./img/option_hide_record_title_enabled.jpg
+
+[option_hide_record_title_enabled_with_compact_mode]: ./img/option_hide_record_title_enabled_with_compact_mode.jpg
+
+
+### hide lines with undefined format ###
+
+Lines with undefined format are not displayed in the analysis.
+
+Without the option :
+
+![Screenshot of hiding lines with undefined format disabled][option_hide_lines_with_undefined_format_disabled]
+
+With the option :
+
+![Screenshot of hiding lines with undefined format enabled][option_hide_lines_with_undefined_format_enabled]
+
+[option_hide_lines_with_undefined_format_disabled]: ./img/option_hide_undefined_format_disabled.jpg
+
+[option_hide_lines_with_undefined_format_enabled]: ./img/option_hide_undefined_format_enabled.jpg
+
+### display data gaps ###
+
+Fields not defined in mapping file are displayed in the analysis (they are hidden by default).
+
+Without the option :
+
+![Screenshot of displaying data gaps disabled][option_display_data_gaps_disabled]
+
+With the option :
+
+![Screenshot of displaying data gaps enabled][option_display_data_gaps_enabled]
+
+[option_display_data_gaps_disabled]: ./img/option_display_gaps_disabled.jpg
+
+[option_display_data_gaps_enabled]: ./img/option_display_gaps_enabled.jpg
+
+## Data charset ##
+
+Convert data to selected charset before parsing it.
+
+![Screenshot of selecting charset][select_charset]
+
+## Advanced scripting ##
+
+Advanced scripting lets you create a **custom script** to handle source data.
+
+![Screenshot of custom scripting][custom_scripting]
+
+It can be used, for example, to alter source data (replace a custom field with custom rules) or to compute statistics.
+
+The result of the script will be displayed in the ***'Script output'*** textarea.
+The script output can also be analysed in place of the source data, if option '*analyse script output (instead of source data)*' is checked.
+
+The scripting is made with the **PHP** language (with a limited set of functions, see [Available PHP functions](#availablephpfunctions)).
+
+Inside the script, source data is available through the **$data** variable.
+
+The **return** PHP function can be used inside the script to return data to the script output. 
+
+### Available PHP functions ###
+
+The following functions are available, by default, in custom scripting :
+
+* [bin2hex](http://php.net/manual/en/function.bin2hex.php)
+* [break](http://php.net/manual/en/control-structures.break.php)
+* [ceil](http://php.net/manual/en/function.ceil.php)
+* [date](http://php.net/manual/en/function.date.php)
+* [explode](http://php.net/manual/en/function.explode.php)
+* [false](http://www.php.net/manual/en/language.types.boolean.php)
+* [floatval](http://php.net/manual/en/function.floatval.php)
+* [floor](http://php.net/manual/en/function.floor.php)
+* [foreach](http://php.net/manual/en/control-structures.foreach.php)
+* [implode](http://php.net/manual/en/function.implode.php)
+* [intval](http://php.net/manual/en/function.intval.php)
+* [intval](http://php.net/manual/en/function.intval.php)
+* [print](http://php.net/manual/en/function.print.php)
+* [print\_r](http://php.net/manual/en/function.print-r.php)
+* [rand](http://php.net/manual/en/function.rand.php)
+* [return](http://php.net/manual/en/function.return.php)
+* [round](http://php.net/manual/en/function.round.php)
+* [srand](http://php.net/manual/en/function.srand.php)
+* [stristr](http://php.net/manual/en/function.stristr.php)
+* [str\_pad](http://php.net/manual/en/function.str-pad.php) (with STR\_PAD\_LEFT, STR\_PAD\_RIGHT, STR\_PAD\_BOTH)
+* [strpos](http://php.net/manual/en/function.strpos.php)
+* [strtolower](http://php.net/manual/en/function.strtolower.php)
+* [strtoupper](http://php.net/manual/en/function.strtoupper.php)
+* [strval](http://php.net/manual/en/function.strval.php)
+* [substr](http://php.net/manual/en/function.substr.php)
+* [substr\_replace](http://php.net/manual/en/function.substr-replace.php)
+* [time](http://php.net/manual/en/function.time.php)
+* [true](http://php.net/manual/en/language.types.boolean.php)
+
+Others functions are forbidden (the script output will mention that the call is illegal).
+
+Additional functions can be allowed.
+See [How to allow a PHP function to be used in advanced scripting](#allowaphpfunctiontobeusedinadvancedscripting) for directions.
+
+### Sample script 1 : CSV file altering ###
+
+In this example, we are dealing with the following CSV file :
+
+![Screenshot of the CSV sample file][csv_sample_file]
+
+[csv_sample_file]: ./img/custom_script_example_csv.jpg
+
+
+The CSV file has four columns :
+
+* Id : Identifier
+* Name : Character name
+* Birthday : Date of birth
+* Occupation
+
+
+CSV data sample :
+
+    24;Mr. BEAN;06/01/55;Unknown
+    951;Zaphod BEEBLEBROX;11/03/52;Galactic President
+    952;Ford PREFECT;11/03/52;Researcher for the Hitchhiker's Guide to the Galaxy
+
+
+The matching CSV file format :
+
+![Screenshot of the CSV file format][csv_sample_file_format]
+
+[csv_sample_file_format]: ./img/custom_script_example_format_csv.jpg
+
+    CRITERIA;CRITERIA_POS;D01_CORRESPONDING_FIELD;CONVERSION_TYPE;START;SIZE;MANDATORY;TYPE;NAME;DESCRIPTION
+    CSV;;;;1;;Y;N;ID;Identifier
+    CSV;;;;2;;Y;A;Name;Character name
+    CSV;;;;3;;N;A;Birthday;Date of birth
+    CSV;;;;4;;N;A;Occupation;
+
+Example of script :
+
+<div class="highlight"><pre><span class="cp">&lt;?php</span> 
+<span class="c1">// convert data to an array of lines</span>
+<span class="nv">$data</span><span class="o">=</span><span class="nb">explode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="nv">$data</span><span class="p">);</span>
+<span class="c1">// for each line of data (line is passed by reference =&gt; it can be modified)</span>
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="o">&amp;</span><span class="nv">$line</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// we split fields at each &#39;;&#39; char (CSV file)</span>
+    <span class="nv">$fields</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">,</span><span class="nv">$line</span><span class="p">);</span>
+    
+    <span class="c1">// for each field</span>
+    <span class="k">foreach</span><span class="p">(</span><span class="nv">$fields</span> <span class="k">as</span> <span class="nv">$field_column_number</span><span class="o">=&gt;&amp;</span><span class="nv">$field</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// according to the matching column number in the CSV file (first column is 0)</span>
+        <span class="k">switch</span><span class="p">(</span><span class="nv">$field_column_number</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Column 1 (ID)</span>
+            <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+                <span class="nv">$field</span> <span class="o">=</span> <span class="nb">intval</span><span class="p">(</span><span class="nv">$field</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+            <span class="c1">// Column 2 (NAME)</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+                <span class="nv">$field</span> <span class="o">=</span> <span class="s2">&quot;TEST&quot;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+            <span class="c1">// Column 4 (OCCUPATION)</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+                <span class="nv">$field</span> <span class="o">=</span> <span class="s2">&quot;NONE&quot;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// reconstruction of the line with altered data </span>
+    <span class="nv">$line</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">,</span><span class="nv">$fields</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// reconstruction of modified data</span>
+<span class="k">return</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="nv">$data</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+Script output :
+
+    25;TEST;06/01/55;NONE
+    952;TEST;11/03/52;NONE
+    953;TEST;11/03/52;NONE
+
+
+### Sample script 2 : fixed-length fields file altering ###
+
+This script alters source data.
+
+For this script, the source data format will be :
+
+    field1;field2;field3
+    1;2,3
+    Record type 'R0' :
+        Field record type : position  1, length  2
+        Field data1 :       position  3, length 35
+
+An sample file would be :
+
+    MR. TEST       TEST ROAD        FR
+    TESTING COMPANYFAMOUS STREET    EN
+
+We want to change field2 with 'TEST' and fied3 with 'TEST2'.
+
+The PHP script :
+
+<div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// on eclate les donnees par ligne sous forme de tableau</span>
+<span class="nv">$data</span><span class="o">=</span><span class="nb">explode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="nv">$data</span><span class="p">);</span>
+<span class="c1">// parcours des donnees ligne par ligne (la ligne est passee par reference =&gt; elle est directement modifiable)</span>
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="o">&amp;</span><span class="nv">$line</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// on recupere l&#39;identifiant de la ligne</span>
+    <span class="nv">$identifiant</span> <span class="o">=</span> <span class="nx">substr</span><span class="p">(</span><span class="nv">$line</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="k">switch</span><span class="p">(</span><span class="nv">$identifiant</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// il s&#39;agit d&#39;une ligne P0</span>
+        <span class="k">case</span> <span class="s1">&#39;P0&#39;</span><span class="o">:</span>
+            <span class="c1">// On remplace le matricule chargeur (position 327, taille 6)</span>
+            <span class="nv">$line</span> <span class="o">=</span> <span class="nx">substr_replace</span><span class="p">(</span><span class="nv">$line</span><span class="p">,</span><span class="s1">&#39;123456&#39;</span><span class="p">,</span><span class="mi">327</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span>
+            <span class="c1">// On remplace le nom du destinataire (position 44, taille 35) avec padding des donnees (str_pad)</span>
+            <span class="nv">$line</span> <span class="o">=</span> <span class="nx">substr_replace</span><span class="p">(</span><span class="nv">$line</span><span class="p">,</span><span class="nb">str_pad</span><span class="p">(</span><span class="s1">&#39;TEST&#39;</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">),</span><span class="mi">44</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">35</span><span class="p">);</span>
+            <span class="c1">// On remplace l&#39;adresse 1 (position 79, taille 35) avec padding des donnees (str_pad)</span>
+            <span class="nv">$line</span> <span class="o">=</span> <span class="nx">substr_replace</span><span class="p">(</span><span class="nv">$line</span><span class="p">,</span><span class="nb">str_pad</span><span class="p">(</span><span class="s1">&#39;RUE DU TEST&#39;</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">),</span><span class="mi">79</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">35</span><span class="p">);</span>
+            <span class="c1">// Si le poids (position 29, taille 15) est superieur a 1000 Kg on passe la prestation (position 385, taille 2) a MORYPAL</span>
+            <span class="nv">$poids</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nx">substr</span><span class="p">(</span><span class="nv">$line</span><span class="p">,</span><span class="mi">29</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">));</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$poids</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$line</span> <span class="o">=</span> <span class="nx">substr_replace</span><span class="p">(</span><span class="nv">$line</span><span class="p">,</span><span class="s1">&#39;22&#39;</span><span class="p">,</span><span class="mi">385</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+        <span class="c1">// il s&#39;agit d&#39;un autre type d&#39;enregistrement</span>
+        <span class="k">default</span><span class="o">:</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// on reconstitue les donnees modifiees et on les retourne</span>
+<span class="k">return</span> <span class="nb">implode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="nv">$data</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+### Sample script 3 : statistics ###
+
+This script gathers statistics about source data.
+
+## Analysis ##
+
+## Basic example ##
+
+## Advanced example ##
+
+## CSV mapping file format ##
+
+
+
+### Available filters ###
+
+#### AAMMJJ ####
+
+#### CP2DPT ####
+
+#### AAAAMMJJ ####
+
+#### JJMMAAAA ####
+#### TRIM ####
+#### INTVAL ####
+#### FLOATVAL ####
+#### VOLUMEB0 ####
+#### G2KG ####
+#### SWCPREST ####
+#### UNM49 ####
+
+## Installation ##
+
+### GNU/Linux ###
+
+### Windows ###
+
+## How do I ? ##
+
+### Add a new file format ###
+
+### Add a custom barcode detection ###
+
+### Add a custom data filter ###
+
+### Display data in a alternate form ###
+
+### Add a custom charset ###
+
+### Allow a PHP function to be used in advanced scripting ###
+
+
+## Licence ##
+
